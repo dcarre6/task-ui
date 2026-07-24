@@ -19,6 +19,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+      - name: Debug
+        run: |
+          echo "Repository: ${{ github.repository }}"
+          echo "Ref: ${{ github.ref }}"
+          echo "Role: ${{ secrets.AWS_ROLE_ARN }}"
 
       - uses: aws-actions/configure-aws-credentials@v4
         with:
